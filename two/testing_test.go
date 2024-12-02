@@ -14,7 +14,19 @@ func TestFrequencyCalculator(t *testing.T) {
 
 			if value1 != value2 {
 				t.Errorf("Expected frequency for %d to be %d, got %d", num, value2, value1)
+				t.Errorf("TestFrequencyCalculator Failed!")
 			}
 		}
+	}
+}
+
+func TestSimilarityScoreCalculator(t *testing.T) {
+	leftSubject, rightSubject := []int{3, 4, 2, 1, 3, 3}, []int{4, 3, 5, 3, 9, 3}
+	expected := 31
+	got := SimilarityScoreCalculator(leftSubject, rightSubject)
+
+	if got != expected {
+		t.Errorf("Expected a similarity score of %d, got %d", expected, got)
+		t.Errorf("TestSimilarityScoreCalculator Failed!")
 	}
 }

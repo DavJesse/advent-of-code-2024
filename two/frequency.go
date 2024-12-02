@@ -1,7 +1,5 @@
 package two
 
-import "advent-of-code/one"
-
 func FrequencyCalculator(nums []int) map[int]int {
 	result := make(map[int]int)
 
@@ -11,14 +9,13 @@ func FrequencyCalculator(nums []int) map[int]int {
 	return result
 }
 
-func SimilarityScoreCalculator(list []int) int {
+func SimilarityScoreCalculator(leftList, rightList []int) int {
 	var frequencyScore int
 	var result int
-	left, right := one.Extract(list)
 
 	// Find frequency of integers in left and right lists
-	leftFreqMap := FrequencyCalculator(left)
-	rightFreqMap := FrequencyCalculator(right)
+	leftFreqMap := FrequencyCalculator(leftList)
+	rightFreqMap := FrequencyCalculator(rightList)
 
 	// Use keys in left list to find out if they exist in right list
 	// Calculate frequency score and accumulate in result
