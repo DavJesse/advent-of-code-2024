@@ -83,7 +83,7 @@ func TestIsValid(t *testing.T) {
 	var p1, p2 int
 
 	for p1 < len(subject) && p2 < len(expected) {
-		if isValid(subject[p1]) != expected[p2] {
+		if isSafe(subject[p1]) != expected[p2] {
 			t.Errorf("Expected %t at index %d to be equal to %t", expected[p2], p2, ascending(subject[p1]))
 			t.Errorf("TestIsValid Failed!")
 		}

@@ -4,7 +4,7 @@ func ascending(levels []int) bool {
 	return levels[0] < levels[len(levels)-1]
 }
 
-func isValid(levels []int) bool {
+func isSafe(levels []int) bool {
 	// Check for distubance in ascending or descending trends
 	// Check diffence of adjacent levels
 	if ascending(levels) {
