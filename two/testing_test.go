@@ -62,3 +62,32 @@ func TestAscending(t *testing.T) {
 		p2++
 	}
 }
+
+func TestIsValid(t *testing.T) {
+	subject := [][]int{
+		{1, 2, 3, 4, 5},
+		{5, 4, 3, 2, 1},
+		{1, 2, 2, 4, 6},
+		{1, 2, 8, 9, 10},
+		{10, 6, 3, 2, 1},
+	}
+
+	expected := []bool{
+		true,
+		true,
+		false,
+		false,
+		false,
+	}
+
+	var p1, p2 int
+
+	for p1 < len(subject) && p2 < len(expected) {
+		if isValid(subject[p1]) != expected[p2] {
+			t.Errorf("Expected %t at index %d to be equal to %t", expected[p2], p2, ascending(subject[p1]))
+			t.Errorf("TestIsValid Failed!")
+		}
+		p1++
+		p2++
+	}
+}
