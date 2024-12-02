@@ -1,6 +1,6 @@
 package two
 
-var reports = []string{
+var Reports = []string{
 	"16 17 18 21 23 24 27 24",
 	"74 76 79 81 82 85 85",
 	"48 51 53 54 55 59",

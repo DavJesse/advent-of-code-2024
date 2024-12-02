@@ -42,3 +42,20 @@ func isSafe(levels []int) bool {
 	}
 	return true
 }
+
+func RedNoseReport(reports []string) int {
+	var result int
+	reportInt := toInteger(reports) // Convert to [][]int for easy manipulation
+
+	// Establish number of safe levels
+	for _, levels := range reportInt {
+		if isSafe(levels) {
+			result++
+		}
+	}
+	return result
+}
+
+func DayTwoSolution() int {
+	return RedNoseReport(Reports)
+}
