@@ -1,6 +1,4 @@
-package two
-
-import "advent-of-code/one"
+package one
 
 func FrequencyCalculator(nums []int) map[int]int {
 	result := make(map[int]int)
@@ -33,11 +31,11 @@ func SimilarityScoreCalculator(leftList, rightList []int) int {
 	return result
 }
 
-func DayTwoSolution() int {
+func DayOnePart2Solution() int {
 	var result int
 
 	// Organise data into left and rifgt lists based on indices
-	leftList, rightList := one.Extract(one.Records)
+	leftList, rightList := Extract(Records)
 
 	// Calculate similarity score
 	result = SimilarityScoreCalculator(leftList, rightList)
