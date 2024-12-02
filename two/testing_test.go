@@ -39,3 +39,26 @@ func TestToInteger(t *testing.T) {
 	}
 
 }
+
+func TestAscending(t *testing.T) {
+	subject := [][]int{
+		{1, 2, 3, 4, 5},
+		{5, 4, 3, 2, 1},
+	}
+
+	expected := []bool{
+		true,
+		false,
+	}
+
+	var p1, p2 int
+
+	for p1 < len(subject) && p2 < len(expected) {
+		if ascending(subject[p1]) != expected[p2] {
+			t.Errorf("Expected %t at index %d to be equal to %t", expected[p2], p2, ascending(subject[p1]))
+			t.Errorf("TestAscending Failed!")
+		}
+		p1++
+		p2++
+	}
+}
